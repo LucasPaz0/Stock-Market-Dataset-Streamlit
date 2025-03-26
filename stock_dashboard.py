@@ -3,9 +3,6 @@ import yfinance as yf
 import altair as alt
 import plotly.graph_objects as go
 
-from test import stock
-
-
 @st.cache_data
 def fetch_stock_info(symbol):
     stock = yf.Ticker(symbol)
@@ -79,7 +76,7 @@ if selection == 'Annual':
         x='Year:O',
         y='Total Revenue'
     )
-    net_income_chart = alt.Chart(annual_financials).mark_bar(color='red').encode(
+    net_income_chart = alt.Chart(annual_financials).mark_bar(color='orange').encode(
         x='Year:O',
         y='Net Income'
     )
